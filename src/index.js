@@ -11,9 +11,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Collapse, Container, Row } from 'react-bootstrap';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import Cloud  from './components/Cloud.js';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -49,15 +50,9 @@ function a11yProps(index) {
 }
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    backgroundColor: 'violet',
-    display: 'flex',
-    height: '100vh',
-  },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
-  },
+  }
 }));
 
 export default function VerticalTabs() {
@@ -76,11 +71,11 @@ export default function VerticalTabs() {
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs example"
-        className={classes.tabs}
+        // className={classes.tabs}
       >
-        <Tab label="Home" {...a11yProps(0)} component={NavLink} to="/" />
+        <Tab label="Home"  component={NavLink} to="/" />
         <Tab label="Weather" {...a11yProps(1)} component={NavLink} to="/weather" />
-        <Tab label="My List" {...a11yProps(2)} component={NavLink} to="/weather" />
+        <Tab label="My List" {...a11yProps(2)} component={NavLink} to="/weatherlist" />
       </Tabs>
       <TabPanel value={value} index={0}>
       </TabPanel>
@@ -99,18 +94,20 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
-        <Container>
-          <Row>
-            <Col xl={2.1}>
-              <VerticalTabs />
-            </Col>
-            <Col xl={6}>
-              <App />
-            </Col>
-          </Row>
-        </Container>
-      </Router>
+        <div>
+        {/* <div id="dynamicbg">
+        </div> */}
+        <Row style={{margin: '0', backgroundPosition: 'fiil'}} >
+          <Col sm={2} id="navSide">
+          <VerticalTabs/>
+          </Col>
+          <Col sm={10}id="pageContent">
+          <App id="mainApp" />
+          </Col>
+        </Row>
 
+        </div>
+      </Router>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

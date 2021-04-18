@@ -4,8 +4,8 @@ import Cloud from '../components/Cloud'
 
 export default function Home() {
     return (
-        <div>
-          <Cloud />
+        <div> 
+          <h1>Weather.find</h1>
         </div>
     )
 }

@@ -6,9 +6,8 @@ import { setData, setLoading } from '../redux/actions';
 
 export default function Weather() {
     const [search, setSearch] = useState('');
-    // const [weather, setWeather] = useState(null);
     const loading = useSelector((state) => state.loading)
-    const weather = useSelector((state) => state.data)
+    const weathers = useSelector((state) => state.data)
     const dispatch = useDispatch();
 
     const handleSubmit = (event) => {
@@ -28,8 +27,6 @@ export default function Weather() {
             .then((data) => {
                 dispatch(setLoading(false));
                 dispatch(setData(data))
-                // dispatch(setWeather(data))
-                // setWeather(data)
                 console.log(data)
                 console.log(data.current.condition.code)
                 if (data.Error) {
@@ -39,9 +36,11 @@ export default function Weather() {
     };
 
     return (
-        <div>
-    
-            <div>
+        <div id="weatherForm">
+                {weathers && (
+                    <WeatherInfo weathers={weathers}/>
+
+                )}
                 <Form onSubmit={handleSubmit}>
                     <InputGroup className="mb-3">
                         <FormControl
@@ -58,11 +57,6 @@ export default function Weather() {
                         </InputGroup.Append>
                     </InputGroup>
                 </Form>
-        {weather && (
-            <WeatherInfo weather={weather}/>
-
-        )}
-            </div>
         </div>
     );
 
