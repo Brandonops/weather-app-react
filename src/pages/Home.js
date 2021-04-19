@@ -1,6 +1,7 @@
 
+import { Button } from 'react-bootstrap'
 import React from 'react'
-import { Button} from 'react-bootstrap'
+import { Link, NavLink } from 'react-router-dom'
 import PartlyCloudy from '../components/PartlyCloudy'
 
 export default function Home() {
@@ -20,10 +21,9 @@ export default function Home() {
           <span>Each search can be saved to a personal list where you can keep track of all locations under one page</span>
         </div>
         <div>
-          <Button type="Button" href="/weather"  variant="info">
+          <Button type="Button" as={Link} to="/weather" variant="info">
             Start finding the weather you need
           </Button>
-
         </div>
       </div>
     </div>
