@@ -1,3 +1,4 @@
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -103,7 +104,7 @@ ReactDOM.render(
         <div style={fontStyle}>
         <Row style={{margin: '0', backgroundPosition: 'fill'}} >
           <Col xl={2} lg={2} md={2} sm={2} xs={2} id="navSide">
-          <VerticalTabs/>
+          <VerticalTabs />
           </Col>
           <Col xl={10} lg={10} md={10} sm={10} xs={10}id="pageContent">
           <App id="mainApp" />
