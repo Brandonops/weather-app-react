@@ -1,5 +1,5 @@
-import { Avatar, CssBaseline, Divider, List, ListItem, ListItemAvatar, ListItemText, makeStyles, Paper, Typography } from '@material-ui/core';
-import React, { useCallback, useEffect } from 'react'
+import {  CssBaseline, Paper } from '@material-ui/core';
+import React from 'react'
 import { Button, Container } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { createAddWeather, createDeleteWeather } from '../redux/actions';
@@ -10,7 +10,7 @@ function WeatherInfo(props) {
     const dispatch = useDispatch();
     const weatherlist = useSelector((state) => {
         console.log(state)
-        return state.weather.find((weather) => weather.city === location.name);
+        return state.weather.find((weath) => weath.location.name === location.name);
     });
 
     const addWeather = () => {
@@ -27,7 +27,7 @@ function WeatherInfo(props) {
             <div >
                 <React.Fragment>
                     <CssBaseline />
-                    <Container maxWidth="sm" id="outsideCanvas">
+                    <Container id="outsideCanvas">
                         <Paper component="div" id="weatherCard">
                         <div className="borderSplitter">
                         <h2>{location.name}, {location.region}</h2>

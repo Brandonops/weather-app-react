@@ -26,6 +26,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: sticky;
 }
 #navSide a {
   color: white;

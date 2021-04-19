@@ -84,7 +84,7 @@ class PartlyCloudy extends Component {
   };
   animate = () => {
     this.cloudParticles.forEach(p => {
-      p.rotation.z -= 0.0005
+      p.rotation.z -= 0.0009
     });
       this.renderScene(this.scene, this.camera);
       this.frameId = window.requestAnimationFrame(this.animate);

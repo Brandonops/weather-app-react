@@ -11,7 +11,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
-import { Col, Collapse, Container, Row } from 'react-bootstrap';
+import { Col,  Row } from 'react-bootstrap';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 
@@ -101,7 +101,7 @@ ReactDOM.render(
     <Provider store={store}>
       <Router>
         <div style={fontStyle}>
-        <Row style={{margin: '0', backgroundPosition: 'fiil'}} >
+        <Row style={{margin: '0', backgroundPosition: 'fill'}} >
           <Col xl={2} lg={2} md={2} sm={2} xs={2} id="navSide">
           <VerticalTabs/>
           </Col>
@@ -109,7 +109,6 @@ ReactDOM.render(
           <App id="mainApp" />
           </Col>
         </Row>
-
         </div>
       </Router>
     </Provider>

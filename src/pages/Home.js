@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { Button} from 'react-bootstrap'
-import { BrowserRouter as NavLink, Link } from 'react-router-dom';
+import { BrowserRouter as Link } from 'react-router-dom';
 import PartlyCloudy from '../components/PartlyCloudy'
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
     <div id="homePage">
       <PartlyCloudy />
       <div id="mainHomeContent">
-        <div id="homeHeader">
+        <div className="homeHeader">
           <h1>i.find(weather)</h1>
         </div>
         <div id="dividerHome">

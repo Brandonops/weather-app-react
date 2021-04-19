@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import * as THREE from "three";
 import cloudpic from './smoke3.png'
-import cloudimg from './cloud.png'
 
 class Cloudy extends Component {
   componentDidMount() {

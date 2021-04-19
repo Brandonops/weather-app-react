@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Button, Form, FormControl, InputGroup } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import ThunderStorm from '../components/ThunderStorm';
@@ -74,8 +74,6 @@ export default function Weather() {
             .then((data) => {
                 dispatch(setLoading(false));
                 dispatch(setData(data))
-                console.log(data)
-                console.log(data.current.condition.code)
                 if (data.Error) {
                     alert(data.Error);
                 }

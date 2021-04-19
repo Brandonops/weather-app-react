@@ -7,7 +7,7 @@ export const weatherReducer = (state = [], action) => {
         case ADD_WEATHER:
             return [...state, action.weather]
         case DELETE_WEATHER: 
-            return state.filter((weather) => weather.city !== action.city)
+            return state.filter((weather) => weather.location.name !== action.city)
         default:
             return state;
     }

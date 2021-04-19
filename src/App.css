@@ -94,9 +94,10 @@ canvas {
     margin-bottom: 25px;
 
 }
-#homeHeader h1{
+.homeHeader h1{
     font-size: 75px;
     border-bottom: solid 3px crimson;
+    color: rgba(0, 75, 94);
 }
 #mainHomeContent{
     display:flex;
@@ -104,7 +105,7 @@ canvas {
     justify-content: center;
     align-items: center;
     z-index: 999999;
-    background: radial-gradient(circle, rgb(0, 33, 33, 0.3) 7%, rgba(0, 75, 94, 0.1) 95%);
+    background: rgba(128, 128, 128, 0.192);
     height: 100vh;
 }
 
@@ -114,7 +115,10 @@ canvas {
     margin-bottom: 25px;
 }
 
-
+.savedList{
+    margin: 10px;
+    margin-top: 40px;
+}
 .defaultBG{
     background-color: rgb(11, 147, 189);
     background: url('./components/defaultbackground.jpg');
@@ -126,4 +130,12 @@ canvas {
     min-width: 100%;
     min-height: 100%;
     z-index: -900;
+}
+
+.grpdHeader{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
 }
