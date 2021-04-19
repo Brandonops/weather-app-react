@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Form, FormControl, InputGroup } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
+import ThunderStorm from '../components/ThunderStorm';
+import Cloudy from '../components/Cloudy';
+import Overcast from '../components/Overcast';
+import PartlyCloudy from '../components/PartlyCloudy';
+import RainNoLightning from '../components/RainNoLightning';
 import WeatherInfo from '../components/WeatherInfo';
 import { setData, setLoading } from '../redux/actions';
-
+import Sunny from '../components/Sunny';
 export default function Weather() {
-    const [search, setSearch] = useState('');
+    const [searchCity, setSearchCity] = useState('');
+    const [searchRegion, setSearchRegion] = useState('');
     const loading = useSelector((state) => state.loading)
     const weathers = useSelector((state) => state.data)
     const dispatch = useDispatch();
@@ -15,14 +21,50 @@ export default function Weather() {
         fetchWeather()
     };
 
-    const handleChange = (event) => {
-        setSearch(event.target.value);
+    const handleChangeCity = (event) => {
+        setSearchCity(event.target.value);
+    };
+    const handleChangeRegion = (event) => {
+        setSearchRegion(event.target.value);
+    };
+    function bgChanger(idCode) {
+        switch(idCode) {
+            case 1000: 
+                return <Sunny /> 
+            case 1003:
+                return <PartlyCloudy />
+            case 1006:
+                return <Cloudy />
+            case 1009:
+                return <Overcast />
+            case 1063:
+                return <RainNoLightning />
+            case 1150:
+                return <RainNoLightning />
+            case 1153:
+                return <RainNoLightning />
+            case 1183: 
+                return <RainNoLightning />
+            case 1198:
+                return <RainNoLightning /> 
+            case 1240:
+                return <RainNoLightning />
+            case 1030:
+                return <RainNoLightning />
+            case 1273:
+                return <ThunderStorm />
+            case 1276:
+                return <ThunderStorm />
+            case 1087:
+                return <ThunderStorm />
+            default:
+                return "defaultBackground"
+        }
     };
 
-
-    const fetchWeather =  () => {
+    const fetchWeather = () => {
         dispatch(setLoading(true))
-        fetch(`http://api.weatherapi.com/v1/current.json?key=77bfa31fbde04eddbe421418211404&q=${search}&aqi=yes`)
+        fetch(`http://api.weatherapi.com/v1/current.json?key=77bfa31fbde04eddbe421418211404&q=${searchCity} ${searchRegion}&aqi=yes`)
             .then((res) => res.json())
             .then((data) => {
                 dispatch(setLoading(false));
@@ -36,27 +78,55 @@ export default function Weather() {
     };
 
     return (
-        <div id="weatherForm">
-                {weathers && (
-                    <WeatherInfo weathers={weathers}/>
+        <div>
+            <PartlyCloudy />
+                        {weathers && (
+                 bgChanger(weathers.current.condition.code)
 
-                )}
-                <Form onSubmit={handleSubmit}>
-                    <InputGroup className="mb-3">
-                        <FormControl
-                            placeholder="Search City"
-                            aria-label="Search City"
-                            onChange={handleChange}
-                            value={search}
-                            required
-                        />
-                        <InputGroup.Append>
-                            <Button type="submit" variant="outline-secondary">
-                                Search
+            )}
+        <div className="weatherForm">
+            <div className="h1Header"> 
+            <h1>Find weather updates around the World</h1>
+            </div>
+                <div id="formDiv">
+
+            <Form onSubmit={handleSubmit} className="cityForm">
+                <InputGroup className="mb-3 inputGrp">
+                    <div>
+                    <FormControl
+                        placeholder="Enter a City"
+                        aria-label="Enter a City"
+                        onChange={handleChangeCity}
+                        value={searchCity}
+                        className="formCtrl"
+                        required
+                    />
+                    </div>
+                    <div>
+                    <FormControl
+                        placeholder="Enter a Region or State"
+                        aria-label="Enter a Region or State"
+                        onChange={handleChangeRegion}
+                        value={searchRegion}
+                        className="formCtrl"
+                        required
+                    />
+                    </div>
+                    <div>
+                    <InputGroup.Append>
+                        <Button type="submit" variant="outline-info">
+                            Search
                             </Button>
-                        </InputGroup.Append>
-                    </InputGroup>
-                </Form>
+                    </InputGroup.Append>
+                    </div>
+                </InputGroup>
+            </Form>
+                </div>
+            {weathers && (
+                <WeatherInfo weathers={weathers} />
+
+            )}
+        </div>     
         </div>
     );
 

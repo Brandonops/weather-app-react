@@ -1,17 +1,23 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
-import Cloud from '../components/Cloud'
-import WeatherInfo from '../components/WeatherInfo';
+import PartlyCloudy from '../components/PartlyCloudy';
+
 
 
 export default function Weatherlist() {
-    const weather = useSelector((state) => state.weatherslist);
+    // const weather = useSelector((state) => state.weatherslist);
     return (
         <div>
-        {weather && (
-            <WeatherInfo weathers={weather}/>
+            <PartlyCloudy />
+            <div className="weatherForm">
+                <div className="h1Header">
+                    <h1>My saved weather locations</h1>
+                </div>
+                {/* {weathers && (
+                <WeatherInfo weathers={weathers} />
 
-        )}
+            )} */}
+            </div>
         </div>
     )
 }

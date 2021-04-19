@@ -1,17 +1,115 @@
-#weatherForm {
-    position: fixed;
+body {
+    font-family: 'Source Code Pro', monospace;
+}
+.weatherForm {
     display: flex;
-    flex-direction: column-reverse;
-    background-color: lawngreen;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.cityForm{
+    max-width: 800px;
+}
+.mb-3.inputGrp.input-group{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
 
+}
+.formCtrl.form-control{
+    width: 400px;
+    margin-bottom: 10px;
+}
+h1 {
+    color: rgb(255, 255, 255);
+}
+.h1Header {
+    background: radial-gradient(circle, rgba(0, 1, 33, 0.3) 7%, rgba(0, 75, 94, 0.3) 95%);
+    border-radius: 3px;
+    padding: 0px 50px;
+    margin-top: 5px;
+    box-shadow: 0 3px 5px 2px rgba(255, 105, 135, .08);
 
 }
 
+#weatherCard{
+    background: radial-gradient(circle, rgba(0, 1, 33, 0.3) 7%, rgba(0, 75, 94, 0.3) 95%);
+    border: 0;
+    border-radius: 3;
+    box-shadow: 0 3px 5px 2px rgba(255, 105, 135, .08);
+    color: white;
+    height: 65vh;
+    width: 500px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+}
+
+#outsideCanvas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 canvas {
     background-color: rgb(11, 147, 189);
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     z-index: -999;
 }
 
+.borderSplitter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid crimson;
+}
+
+#weatherTemp{
+    display: flex;
+    flex-direction: column;;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 10;
+
+}
+
+.ADButton{
+    margin: 20%;
+}
+
+#homeHeader{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    margin-bottom: 25px;
+
+}
+#homeHeader h1{
+    font-size: 75px;
+    border-bottom: solid 3px crimson;
+}
+#mainHomeContent{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+    background: radial-gradient(circle, rgb(0, 33, 33, 0.3) 7%, rgba(0, 75, 94, 0.1) 95%);
+    height: 100vh;
+}
+
+#homeSubContent{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 25px;
+}

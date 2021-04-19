@@ -14,7 +14,13 @@ import Box from '@material-ui/core/Box';
 import { Col, Collapse, Container, Row } from 'react-bootstrap';
 import { Provider } from 'react-redux';
 import store from './redux/store';
-import Cloud  from './components/Cloud.js';
+
+
+const font = "Roboto', sans-serif";
+const fontStyle = ({
+    fontFamily: font,
+  });
+
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -43,10 +49,10 @@ TabPanel.propTypes = {
 };
 
 function a11yProps(index) {
-  // return {
-  //   id: `vertical-tab-${index}`,
-  //   'aria-controls': `vertical-tabpanel-${index}`,
-  // }; 
+  return {
+    id: `vertical-tab-${index}`,
+    'aria-controls': `vertical-tabpanel-${index}`,
+  }; 
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -71,7 +77,7 @@ export default function VerticalTabs() {
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs example"
-        // className={classes.tabs}
+        className={classes.tabs}
       >
         <Tab label="Home"  component={NavLink} to="/" />
         <Tab label="Weather" {...a11yProps(1)} component={NavLink} to="/weather" />
@@ -94,14 +100,12 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
-        <div>
-        {/* <div id="dynamicbg">
-        </div> */}
+        <div style={fontStyle}>
         <Row style={{margin: '0', backgroundPosition: 'fiil'}} >
-          <Col sm={2} id="navSide">
+          <Col xl={2} lg={2} md={2} sm={2} xs={2} id="navSide">
           <VerticalTabs/>
           </Col>
-          <Col sm={10}id="pageContent">
+          <Col xl={10} lg={10} md={10} sm={10} xs={10}id="pageContent">
           <App id="mainApp" />
           </Col>
         </Row>
