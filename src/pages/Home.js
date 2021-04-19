@@ -1,7 +1,7 @@
 
 import { Button } from 'react-bootstrap'
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 import PartlyCloudy from '../components/PartlyCloudy'
 
 export default function Home() {
