@@ -16,13 +16,13 @@ export default function Home() {
 
         </div>
         <div id="homeSubContent">
-          <span>Search any city around the world for current, up-to-date weather information.</span><br>
+          <span>Search any city around the world for current, up-to-date weather information</span><br>
           </br>
-          <span>Each search can be saved to a personal list where you can keep track of all locations under one page.</span>
+          <span>Each search can be saved to a personal list where you can keep track of all locations under one page</span>
         </div>
         <div>
           <Button componentClass={Link} href="/weather" to="/weather" variant="info">
-            Start searching the weather you need
+            Start finding the weather you need
             </Button>
 
         </div>

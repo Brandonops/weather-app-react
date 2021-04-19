@@ -9,6 +9,7 @@ import RainNoLightning from '../components/RainNoLightning';
 import WeatherInfo from '../components/WeatherInfo';
 import { setData, setLoading } from '../redux/actions';
 import Sunny from '../components/Sunny';
+import DefaultBG from '../components/DefaultBG';
 export default function Weather() {
     const [searchCity, setSearchCity] = useState('');
     const [searchRegion, setSearchRegion] = useState('');
@@ -45,6 +46,10 @@ export default function Weather() {
                 return <RainNoLightning />
             case 1183: 
                 return <RainNoLightning />
+            case 1186:
+                return <RainNoLightning />
+            case 1189:
+                return <RainNoLightning />
             case 1198:
                 return <RainNoLightning /> 
             case 1240:
@@ -58,7 +63,7 @@ export default function Weather() {
             case 1087:
                 return <ThunderStorm />
             default:
-                return "defaultBackground"
+                return <DefaultBG />
         }
     };
 

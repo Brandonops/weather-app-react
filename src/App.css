@@ -113,3 +113,17 @@ canvas {
     font-size: 18px;
     margin-bottom: 25px;
 }
+
+
+.defaultBG{
+    background-color: rgb(11, 147, 189);
+    background: url('./components/defaultbackground.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -900;
+}
