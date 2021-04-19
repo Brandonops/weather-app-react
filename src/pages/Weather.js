@@ -68,7 +68,7 @@ export default function Weather() {
 
     const fetchWeather = () => {
         dispatch(setLoading(true))
-        fetch(`http://api.weatherapi.com/v1/current.json?key=77bfa31fbde04eddbe421418211404&q=${searchCity} ${searchRegion}&aqi=yes`)
+        fetch(`https://api.weatherapi.com/v1/current.json?key=77bfa31fbde04eddbe421418211404&q=${searchCity} ${searchRegion}&aqi=yes`)
             .then((res) => res.json())
             .then((data) => {
                 dispatch(setLoading(false));
