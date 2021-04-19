@@ -1,4 +1,4 @@
-import {  CssBaseline, Paper } from '@material-ui/core';
+import {   Paper } from '@material-ui/core';
 import React from 'react'
 import { Button, Container } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
@@ -26,7 +26,6 @@ function WeatherInfo(props) {
         <div id="wInfo">
             <div >
                 <React.Fragment>
-                    <CssBaseline />
                     <Container id="outsideCanvas">
                         <Paper component="div" id="weatherCard">
                         <div className="borderSplitter">

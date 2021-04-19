@@ -13,7 +13,6 @@ import DefaultBG from '../components/DefaultBG';
 export default function Weather() {
     const [searchCity, setSearchCity] = useState('');
     const [searchRegion, setSearchRegion] = useState('');
-    const loading = useSelector((state) => state.loading)
     const weathers = useSelector((state) => state.data)
     const dispatch = useDispatch();
 
