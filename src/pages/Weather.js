@@ -38,21 +38,13 @@ export default function Weather() {
             case 1009:
                 return <Overcast />
             case 1063:
-                return <RainNoLightning />
             case 1150:
-                return <RainNoLightning />
             case 1153:
-                return <RainNoLightning />
-            case 1183: 
-                return <RainNoLightning />
+            case 1183:
             case 1186:
-                return <RainNoLightning />
             case 1189:
-                return <RainNoLightning />
-            case 1198:
-                return <RainNoLightning /> 
+            case 1198: 
             case 1240:
-                return <RainNoLightning />
             case 1030:
                 return <RainNoLightning />
             case 1273:
@@ -84,7 +76,6 @@ export default function Weather() {
             <PartlyCloudy />
                         {weathers && (
                  bgChanger(weathers.current.condition.code)
-
             )}
         <div className="weatherForm">
             <div className="h1Header"> 

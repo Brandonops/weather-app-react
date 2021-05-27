@@ -81,7 +81,7 @@ export default function VerticalTabs() {
         className={classes.tabs}
       >
         <Tab label="Home"  component={NavLink} to="/" />
-        <Tab label="Weather" {...a11yProps(1)} component={NavLink} to="/weather" />
+        <Tab label="Find Weather" {...a11yProps(1)} component={NavLink} to="/weather" />
         <Tab label="My List" {...a11yProps(2)} component={NavLink} to="/weatherlist" />
       </Tabs>
       <TabPanel value={value} index={0}>
