@@ -97,7 +97,7 @@ canvas {
 .homeHeader h1{
     font-size: 75px;
     border-bottom: solid 3px crimson;
-    color: rgba(0, 75, 94);
+    color: rgb(4, 199, 248);
 }
 #mainHomeContent{
     display:flex;
@@ -113,6 +113,7 @@ canvas {
     text-align: center;
     font-size: 18px;
     margin-bottom: 25px;
+    color:rgb(0, 195, 255)
 }
 
 .savedList{

@@ -73,7 +73,7 @@ export default function Weather() {
 
     return (
         <div>
-            <PartlyCloudy />
+            <ThunderStorm />
                         {weathers && (
                  bgChanger(weathers.current.condition.code)
             )}

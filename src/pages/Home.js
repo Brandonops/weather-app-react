@@ -1,13 +1,10 @@
-
-import { Button } from 'react-bootstrap'
 import React from 'react'
-import { Link} from 'react-router-dom'
-import PartlyCloudy from '../components/PartlyCloudy'
+import ThunderStorm from '../components/ThunderStorm'
 
 export default function Home() {
   return (
     <div id="homePage">
-      <PartlyCloudy />
+      <ThunderStorm />
       <div id="mainHomeContent">
         <div className="homeHeader">
           <h1>i.find(weather)</h1>

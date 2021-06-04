@@ -1,7 +1,7 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
-import PartlyCloudy from '../components/PartlyCloudy';
+import ThunderStorm from '../components/ThunderStorm';
 import WeatherInfo from '../components/WeatherInfo'
 
 
@@ -17,7 +17,7 @@ export default function Weatherlist() {
 
     return (
         <div>
-            <PartlyCloudy />
+            <ThunderStorm />
             <div>
                 <div className="grpdHeader">
                 <div className="homeHeader">
